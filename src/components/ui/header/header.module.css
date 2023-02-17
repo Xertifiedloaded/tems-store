@@ -1,0 +1,113 @@
+section {
+
+    background: #ed017f;
+}
+
+section>.main {
+    width: 90%;
+    margin: 0 auto;
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 3fr));
+    gap: 10px; */
+    display: flex;
+    padding: 5px 0;
+    align-items: center;
+
+}
+.logo,.search,.login{
+    width: 30%;
+}
+.logo>.imageLogo {
+    display: flex;
+    gap: 10px;
+}
+
+.logo .imageLogo>a {
+    text-decoration: none;
+
+}
+
+.search>input {
+    width: 92%;
+    outline: none;
+    padding: 7px 5px;
+    border: none;
+    background: white;
+    border-radius: 3px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+}
+
+.search>span {
+    background-color: #fba100;
+    width: 8%;
+
+}
+
+span>img {
+    padding: 5px 5px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.main>.login {
+    display: grid;
+    align-items: center;
+    text-transform: capitalize;
+    grid-template-columns: repeat(auto-fit, minmax(5rem, 3fr));
+}
+
+.main.login>a:not(:last-child) {
+    border: 1px solid blue;
+    padding: 5px 25px;
+}
+
+.main .login>a span {
+    padding: 2px 6px;
+    background: white;
+    border-radius: 100px;
+}
+
+.login>a:first-child {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .login>a:last-child {
+    border: 1px solid green;
+    background: #33b27b;
+    border-radius: 4px;
+}
+
+.main .login a>button {
+    background: transparent;
+    border: none;
+    width: 100%;
+    padding: 10px 0;
+    color: white;
+
+    text-transform: capitalize;
+}
+
+.main .login a>button i {
+    margin-right: 3px;
+}
+
+@media screen and (max-width:768px) {
+.main{
+
+}
+.search,.login{
+    display: none;
+}
+
+
+}
