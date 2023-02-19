@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import classes from "../header/header.module.css";
 import Search from '../../../assets/images/search.svg'
 import Category from "./categories/category";
+import Bralet from "../../products/items/bralet/bralet";
+
+import Cart from "../../addToCart/cart";
 const Header = () => {
     return (
         <>
@@ -40,7 +43,7 @@ const Header = () => {
                         <Link to="">
                             <button>
                                 <i class="fa-solid fa-cart-shopping"></i>
-                                my cart
+                                my cart {Cart.length}
                             </button>
                         </Link>
                     </div>

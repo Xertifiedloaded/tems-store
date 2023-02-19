@@ -1,8 +1,13 @@
 import React, { useState } from 'react'
+import classes from './cart.module.css'
 
 const Cart = () => {
     return (
-        <div>Cart</div>
+        <React.Fragment>
+            <div>
+        <p>hello</p>
+            </div>
+        </React.Fragment>
     )
 }
 
