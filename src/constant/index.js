@@ -45,7 +45,7 @@ export const allProduct = [
      
     },
     {
-        id: 5,
+        id: 3,
         name: "men's boxer Trunk",
         image: boxer5,
         price: 5800,
@@ -58,45 +58,75 @@ export const allProduct = [
         price: 5800,
     
     },
- 
-
-
-]
-export const bra = [
     {
-        id: 0,
+        id: 5,
+        name: "Ladies sexy  panties",
+        image: pant2,
+        price: 2100,
+
+    },
+    {
+        id: 6,
+        name: "Lace panties",
+        image: pant1,
+        price: 2300,
+
+    },
+    {
+        id: 7,
+        name: "VEJARO transparent",
+        image: pant3,
+        price: 2200,
+
+    },
+    {
+        id: 8,
+        name: "cutton and lace",
+        image: pant4,
+        price: 2400
+
+    },
+    {
+        id: 9,
+        name: "heigh waist women",
+        image: pant5,
+        price: 1100,
+
+    },
+    {
+        id: 10,
         name: "bralet",
         image: bralet1,
         price: 1900,
-   
+
     },
     {
-        id: 1,
+        id: 11,
         name: "bra",
         image: bralet2,
         price: 1300,
-   
+
     },
     {
-        id: 2,
+        id: 12,
         name: "bra",
         image: bralet3,
         price: 1200,
 
     },
     {
-        id: 3,
+        id: 13,
         name: "bra",
         image: bralet4,
         price: 1100,
 
     },
     {
-        id: 4,
+        id: 14,
         name: "bra",
         image: bralet5,
         price: 2000,
- 
+
     },
 
 ]
@@ -114,44 +144,4 @@ export const advert = [
     {
         img: ads7
     },
-
-]
-
-export const panties = [
-    {
-        id: 0,
-        name: "Ladies sexy  panties",
-        image: pant2,
-        price: 2100,
-
-    },
-    {
-        id: 1,
-        name: "Lace panties",
-        image: pant1,
-        price: 2300,
-
-    },
-    {
-        id: 2,
-        name: "VEJARO transparent",
-        image: pant3,
-        price: 2200,
-
-    },
-    {
-        id: 3,
-        name: "cutton and lace",
-        image: pant4,
-        price: 2400
-     
-    },
-    {
-        id: 4,
-        name: "heigh waist women",
-        image: pant5,
-        price: 1100,
-    
-    },
-
 ]
