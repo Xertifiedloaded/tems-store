@@ -12,8 +12,9 @@ const MainLayout = () => {
         if(ProductExist) {
             setCartItems(cartItems.map((item) => item.id === item.product ?
                 { ...ProductExist, quantity: ProductExist.quantity + 1 } : item)
-            )
-        }else {
+            );
+        }
+        else {
             setCartItems([...cartItems, { ...product, quantity: 1 }])
         }
     }

@@ -1,0 +1,39 @@
+.main {
+    width: 90%;
+    margin: 0 auto;
+box-shadow: 0 0 20px 0 rgba(76, 87, 125, .02);
+    padding-top: 33px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 4fr));
+}
+
+.main .items {
+    box-sizing: border-box;
+    padding: 15px;
+    /* border: 1px solid black; */
+    /* -webkit-box-shadow: -1px -1px 15px -178px #000; */
+}
+
+.items>img {
+    width: 100%;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+}
+
+.items>.name {
+    color: blue;
+    margin: 5px 0;
+    text-transform: capitalize;
+}
+
+.items>p {
+    margin: 5px 0;
+}
+
+.items>button {
+    width: 100%;
+    padding: 10px 0;
+    border: 1px solid black;
+    border-radius: 10px;
+}

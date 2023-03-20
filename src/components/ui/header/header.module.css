@@ -1,14 +1,26 @@
-.main{
+header {
+    position: fixed;
+    width: 100%;
+    background: black;
+}
+
+.main {
+    width: 90%;
+    margin: 0 auto;
+    padding: 15px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+color: white;
 }
-ul{
+
+ul {
     display: flex;
     align-items: center;
     justify-content: center;
     list-style: none;
 }
-a{
+
+a {
     margin-left: 20px;
 }

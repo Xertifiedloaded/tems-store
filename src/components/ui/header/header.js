@@ -3,27 +3,26 @@ import { Link } from 'react-router-dom'
 import { userContent } from '../../../mainLayout/mainLayout'
 import classes from './header.module.css'
 const Header = () => {
-    const { cartItems }=useContext(userContent)
-  return (
-      <>
-          <div className={classes.main}>
-              <h3>
-                  hello
-              </h3>
-
-              <ul>
-               <a>home</a>
-               <a>sign up</a>
-                  <Link to="/cart">
-                      cart
-                      <span>
-                          {cartItems.length === 0 ? "" : cartItems.length}
-                      </span>
-                  </Link>
-              </ul>
-       </div>
-      </>
-  )
+    const { cartItems } = useContext(userContent)
+    return (
+        <>
+            <header>
+                <div className={classes.main}>
+                    <h3>
+                        Xertifiedloaded
+                    </h3>
+                    <div>
+                        <Link to="/cart">
+                            cart
+                            <span>
+                                {cartItems.length === 0 ? "" : cartItems.length}
+                            </span>
+                        </Link>
+                    </div>
+                </div>
+            </header>
+        </>
+    )
 }
 
 export default Header
