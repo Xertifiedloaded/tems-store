@@ -1,14 +1,15 @@
-import React from "react";
+import { useContext, React } from "react";
 import { Link } from "react-router-dom";
 import classes from "../header/header.module.css";
 import Search from '../../../assets/images/search.svg'
-import Category from "./categories/category";
-import Bralet from "../../products/items/bralet/bralet";
-
-import Cart from "../../addToCart/cart";
+import { UserContext } from "../../../layout/mainLayout/mainLayout";
 const Header = () => {
+    const {cart,handledClick} = useContext(UserContext);
+    console.log(cart)
     return (
+        
         <>
+          
             <section>
                 <div className={classes.main}>
                     <div className={classes.logo}>
@@ -37,19 +38,18 @@ const Header = () => {
                             <span>&#63;</span> Help<i class="fa-solid fa-chevron-down"></i>
                         
                         </Link>
-                        <Link to="">
+                        <Link to="/">
                             login/signup
                         </Link>
                         <Link to="">
+                        
                             <button>
                                 <i class="fa-solid fa-cart-shopping"></i>
-                                my cart {Cart.length}
+                                my cart {cart.length}
                             </button>
                         </Link>
                     </div>
                 </div>
-                <Category />
-                
             </section>
       
         </>

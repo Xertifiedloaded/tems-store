@@ -1,14 +1,9 @@
-import React, { useState } from 'react'
-import classes from './cart.module.css'
+import React from 'react'
 
 const Cart = () => {
-    return (
-        <React.Fragment>
-            <div>
-        <p>hello</p>
-            </div>
-        </React.Fragment>
-    )
+  return (
+    <div>Cart hello</div>
+  )
 }
 
-export default Cart;
+export default Cart

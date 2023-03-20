@@ -1,13 +1,23 @@
-import React from 'react'
+import { createContext, useState } from "react";
 import { Outlet } from 'react-router-dom'
 import Header from '../../components/ui/header/header'
 import Footer from '../../components/ui/footer/footer'
-const MainLayout = ({ children }) => {
+import { allProduct } from "../../constant";
+import Cart from "../../components/addToCart/cart";
+export const UserContext = createContext();
+const MainLayout = () => {
+    const [cart, setCart] = useState([])
+    const handledClick = () => {
+        setCart(cart+1)
+        console.log(setCart)
+    }
     return (
         <>
-            <Header />
-            <Outlet />
-            <Footer />
+            <UserContext.Provider value={{ cart, handledClick }}>
+                <Header />
+                <Outlet />
+                <Footer />
+            </UserContext.Provider>
         </>
     )
 }

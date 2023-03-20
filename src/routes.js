@@ -3,6 +3,7 @@ import { useRoutes } from 'react-router-dom'
 import MainLayout from './layout/mainLayout/mainLayout'
 import Landing from './pages/landing/landing'
 import Cart from './components/addToCart/cart'
+import CartPage from './pages/contact/cartPage'
 const Routes = () => {
   return useRoutes([
     {
@@ -15,8 +16,9 @@ const Routes = () => {
         },
         {
           path: "/cart",
-          element:<Cart/>,
+          element:<CartPage/>,
         },
+      
       ]
     }
   ]
