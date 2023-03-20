@@ -1,14 +1,10 @@
 import React from 'react'
-import Cart from '../../components/addToCart/cart';
-import Advert from '../../components/advert/advert';
-import Products from '../../components/products/products'
+import Product from '../../components/product/product'
+
 const Landing = () => {
-  return (
-    <>
-      <Advert />
-      <Products />
-    </>
-  )
+    return (
+        <Product />
+    )
 }
 
-export default Landing;
+export default Landing

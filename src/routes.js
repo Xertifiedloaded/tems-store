@@ -1,14 +1,13 @@
 import React from 'react'
 import { useRoutes } from 'react-router-dom'
-import MainLayout from './layout/mainLayout/mainLayout'
+import MainLayout from './mainLayout/mainLayout'
+import Cart from './pages/cart/cart'
 import Landing from './pages/landing/landing'
-import Cart from './components/addToCart/cart'
-import CartPage from './pages/contact/cartPage'
 const Routes = () => {
   return useRoutes([
     {
       path: "/",
-      element: <MainLayout />,
+      element: <MainLayout/>,
       children: [
         {
           path: "/",
@@ -16,8 +15,9 @@ const Routes = () => {
         },
         {
           path: "/cart",
-          element:<CartPage/>,
+          element:<Cart/>,
         },
+    
       
       ]
     }
