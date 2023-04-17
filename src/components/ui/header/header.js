@@ -1,28 +1,30 @@
-import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
-import { userContent } from '../../../mainLayout/mainLayout'
-import classes from './header.module.css'
+import React from "react";
+import { NavLink } from "react-router-dom";
+import classes from "./header.module.css";
 const Header = () => {
-    const { cartItems } = useContext(userContent)
-    return (
-        <>
-            <header>
-                <div className={classes.main}>
-                    <h3>
-                        Xertifiedloaded
-                    </h3>
-                    <div>
-                        <Link to="/cart">
-                            cart
-                            <span>
-                                {cartItems.length === 0 ? "" : cartItems.length}
-                            </span>
-                        </Link>
-                    </div>
-                </div>
-            </header>
-        </>
-    )
-}
+  return (
+    <>
+      <header className={classes.header}>
+        <div className={classes.main}>
+          <div className={classes.logo}>
+            <h1>Logo</h1>
+          </div>
+          <nav className={classes.nav}>
+            <NavLink to="/">HOME</NavLink>
+            <NavLink to="/">SHOP</NavLink>
+            <NavLink to="/">ABOUT US</NavLink>
+            <NavLink to="/">CONTACT US</NavLink>
+            <NavLink to="/login">
+              <button>login</button>
+            </NavLink>
+            <div className={classes.cart}>
+              <p>cart</p>
+            </div>
+          </nav>
+        </div>
+      </header>
+    </>
+  );
+};
 
-export default Header
+export default Header;

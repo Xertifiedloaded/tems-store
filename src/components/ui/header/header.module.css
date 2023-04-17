@@ -1,26 +1,44 @@
-header {
-    position: fixed;
-    width: 100%;
-    background: black;
+.header {
+    padding: 30px 0;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, .1),
+        0 8px 10px -6px rgba(0, 0, 0, .1);
 }
 
 .main {
+    box-sizing: border-box;
     width: 90%;
     margin: 0 auto;
-    padding: 15px 0;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-color: white;
 }
 
-ul {
+.main nav {
     display: flex;
+    gap: 20px;
     align-items: center;
-    justify-content: center;
-    list-style: none;
 }
 
-a {
-    margin-left: 20px;
+.main nav a>button {
+    text-transform: uppercase;
+    padding: 13px 40px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+.main nav>.cart {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    color: white;
+    z-index: 2;
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7));
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
 }
