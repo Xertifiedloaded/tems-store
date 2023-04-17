@@ -30,7 +30,6 @@ const Login = () => {
       <div className={classes.main}>
         <div className={classes.container}>
           <h1>Login</h1>
-
           <div className={classes.alternative}>
             <button className={classes.btn1}>
               <span>Continue with google</span>
