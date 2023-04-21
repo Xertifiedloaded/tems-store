@@ -119,3 +119,56 @@ export const cartData = [
         star5: <Star />,
     },
 ]
+export const LocationData = [
+    {
+        id: 0,
+        location: "camp",
+        price: 500
+    },
+    {
+        id: 1,
+        location: "osiele",
+        price: 600
+    },
+    {
+        id: 2,
+        location: "obantoko",
+        price: 1000
+    },
+    {
+        id: 3,
+        location: "harmony",
+        price: 300
+    },
+    {
+        id: 4,
+        location: "isolu",
+        price: 400
+    },
+    {
+        id: 5,
+        location: "agbede",
+        price: 200
+    },
+    {
+        id: 6,
+        location: "fourSquare",
+        price: 200
+    },
+    {
+        id: 7,
+        location: "kofesu",
+        price: 200
+    },
+    {
+        id: 8,
+        location: "oluwo",
+        price: 300
+    },
+    {
+        id: 9,
+        location: "labuta",
+        price: 400
+    },
+
+]

@@ -1,0 +1,57 @@
+.inputs {
+    margin: 5px 0;
+}
+
+form {
+    overflow: hidden;
+}
+
+.inputs>input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.22);
+}
+
+.inputs>input::placeholder {
+    text-transform: capitalize;
+}
+
+.location {
+    overflow: hidden;
+
+    transition: 1s ease-in-out;
+}
+
+.locationId {
+    animation: location 1s forwards;
+    text-transform: capitalize;
+}
+
+@keyframes location {
+    from {
+        transition: 1s ease-in-out;
+        transform: translateY(-100px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.locatn {
+    display: flex;
+    background: black;
+    color: white;
+    box-sizing: border-box;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.locationPrice {
+    display: flex;
+    justify-content: space-between;
+}

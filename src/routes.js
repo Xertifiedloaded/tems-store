@@ -4,6 +4,7 @@ import MainLayout from './mainLayout/mainLayout'
 import Cart from './pages/cart/cart'
 import Landing from './pages/landing/landing'
 import Login from './components/login/login'
+import Overview from './pages/overview/overview'
 const Routes = () => {
   return useRoutes([
     {
@@ -21,6 +22,10 @@ const Routes = () => {
         {
           path: "/login",
           element:<Login/>,
+        },
+        {
+          path: "/overview/:id",
+          element:<Overview/>,
         },
     
       

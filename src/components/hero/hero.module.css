@@ -1,0 +1,49 @@
+.main {
+    margin: 0 auto;
+    min-height: 100vh;
+
+    background: pink;
+}
+
+
+.main .flex {
+    width: 90%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 70px 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text>h1 {
+    font-size: 70px;
+    width: 50%;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.woman {
+    font-weight: 600;
+}
+
+.discover>p {
+    width: 20%;
+    padding-left: 10px;
+    font-weight: 400;
+    text-transform: capitalize;
+    text-decoration: underline;
+}
+
+@media screen and (max-width:600px) {
+    .woman {
+        display: none;
+    }
+
+    .main {
+        background-image: url(../../assets/../assets/images/woman_hero.png);
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: auto;
+    }
+}

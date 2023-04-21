@@ -1,0 +1,48 @@
+.main {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.main>h2 {
+    font-size: 15px;
+    padding: 10px 0;
+}
+
+.main .cartImg {
+    width: 15%;
+}
+
+.main .cartImg>img {
+    width: 100%;
+
+}
+
+.flexCard {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.flexCard>h2{
+        font-size: 16px;
+}
+.qty {
+    width: 50%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+}
+.qty>button:nth-child(1){
+background: red;
+color: white;
+}
+.qty>button{
+    width: 30px;
+    height: 30px;
+    border: none;
+}
+.qty span>h2{
+    font-size: 13px;
+}

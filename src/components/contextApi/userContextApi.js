@@ -1,45 +1,83 @@
-import React, { useState, createContext } from 'react'
+import React, { useState, createContext, useEffect } from 'react'
 import { cartData } from '../../constant/constant'
+import axios from 'axios'
 export const UserContext = createContext()
 
 export const UserContextApi = ({ children }) => {
-    const [cartItem, setCartItem] = useState([])
-    const [search, setSearch] = useState('')
+    const [products, setProducts] = useState([])
+    const [cart, setCart] = useState([])
+    const [open, SetisOpen] = useState(false)
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                const response = await axios({
+                    method: "GET",
+                    // url: 'https://fakestoreapi.com/products',
+                    url:"data.json",
+                    headers: {
+                        "Content-Type": "application.json",
+                        "Accept": "application.json"
+                    },
+                })
+                setProducts(response.data)
+                console.log(response)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        fetchProducts()
+    }, [])
+
+    const handleClose = () => {
+        SetisOpen(!open)
+    }
     const addToCart = (product) => {
-        const exist = cartItem.find((item) =>
-            item.id == product.id)
+        const exist = cart.find((x) => x.id === product.id);
         if (exist) {
-            setCartItem(
-                cartItem.map((item) =>
-                    item.id === product.id ? { ...exist, qty: exist.qty + 1 } : item
+            setCart(
+                cart.map((x) =>
+                    x.id === product.id ? { ...exist, qty: exist.qty + 1 } : x
+                )
+             
+            );
+            console.log(product)
+        } else {
+            setCart([...cart, { ...product, qty: 1 }]);
+        
+        }
+    }
+
+    const removeFromCart = (product) => {
+        const exist = cart.find((x) => x.id === product.id);
+        if (exist.qty === 1) {
+            setCart(cart.filter((x) => x.id !== product.id));
+        } else {
+            setCart(
+                cart.map((x) =>
+                    x.id === product.id ? { ...exist, qty: exist.qty - 1 } : x
                 )
             );
-        } else {
-            setCartItem([...cartItem], { ...product, qty: 1 })
         }
     }
-    const removeProduct = (product) => {
-        const exist = cartItem.find((item) =>
-            item.id == product.id)
-        if (exist.qty == 1) {
-            setCartItem(cartItem.filter((item) => item.id !== product.id))
-        } else {
-            setCartItem(cartItem.map((item) =>
-                item.id === product.id ? { ...exist, qty: exist.qty - 1 } : item
-            ))
-        }
+    const clearCart = () => {
+        setCart([])
     }
-    const handleSearch = (e) => {
-        setSearch(e.target.value);
-    }
+
     const value = {
-        cartData,
-        removeProduct,
+        products,
+        cart,
+        setCart,
+        setProducts,
+        open,
+        SetisOpen,
+        clearCart,
+        handleClose,
+        open,
+        SetisOpen,
         addToCart,
-        search,
-        setSearch,
-        handleSearch
+        removeFromCart, 
     }
+
     return (
         <UserContext.Provider value={value} >
             {children}

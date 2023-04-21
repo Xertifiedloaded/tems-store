@@ -4,55 +4,49 @@
 }
 
 body {
-background-color:#FAFAFC;
+  background-color: #FAFAFC;
 
-    color: #181c32;
+  color: #181c32;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-a{
+
+a {
   text-decoration: none;
-  color: black;
+  color: black ;
   text-transform: capitalize;
 }
-/* .swiper-button-prev,
-.swiper-button-next {
-  display: none !important;
-  background: white !important;
-  width: 50px !important;
-  height: 50px !important;
-  border-radius: 50%;
-  position: relative;
-}
 
-.swiper-button-prev::after {
-  content: url(./assets/images/prev.svg) !important;
-  top: -5px !important;
-  position: absolute;
-  left: 20px;
+.fa-cart-shopping {
+  font-size: 25px !important;
 
 }
 
-.swiper-button-next::after {
-  content: url(./assets/images/prev.svg) !important;
-  position: absolute;
-  transform: rotateY(180deg)!important;
-    top: -5px !important;
-    right: 20px;
+.cartIcon {
+  transition: 1s linear !important;
+  animation: shake 1s forwards running infinite;
+
 }
 
+@keyframes shake {
+  from {
+    transform: rotate(0);
+    transition: 1s;
+    transform: scale(1);
+  }
 
-.swiper:hover .swiper-button-prev {
-  display: block !important;
+  to {
+    transform: scale(2);
+        transition: 1s;
+    transform: rotate(20deg);
+  }
 }
-
-.swiper:hover .swiper-button-next {
-  display: block !important;
+.trashBin{
+  background: red !important;
+  border-radius: 5px !important;
+  height: 30px !important;
+  color: white !important;
+  width: 30px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
-.swiper-pagination-bullet{
-  background: white!important;
-  width: 12px!important;
-  height: 12px!important;
-}
-.swiper-pagination-bullet-active{
-  background: black!important;
-} */

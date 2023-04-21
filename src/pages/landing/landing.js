@@ -1,9 +1,13 @@
 import React from 'react'
 import Product from '../../components/product/product'
+import Hero from '../../components/hero/hero'
 
 const Landing = () => {
     return (
-        <Product />
+        <>
+            <Hero />
+            <Product />
+        </>
     )
 }
 

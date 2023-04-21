@@ -1,0 +1,24 @@
+.sideMirror {
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.OrderDetails {
+    padding: 10px;
+    background: black;
+    color: white;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.clearIcon {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}

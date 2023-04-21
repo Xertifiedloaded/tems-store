@@ -8,9 +8,10 @@
     width: 35%;
     box-sizing: border-box;
     background: white;
+    border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     box-shadow: 0 0.25rem 0.5rem rgba(28, 32, 51, 0.1);
-    padding: 50px 20px;
+    padding: 20px 30px;
 }
 
 .main .container .form {
@@ -25,17 +26,40 @@
 
 .main .container .form .inputs>input {
     width: 100%;
-    height: 40px;
+    height: 50px;
+    outline: none;
     padding: 10px;
     border-radius: 8px;
     border: 1px solid #D8DBEB;
     box-sizing: border-box;
 }
 
+.error {
+    color: red;
+    font-size: 10px;
+    padding: 0 10px;
+}
+
+.password {
+    font-size: 10px;
+    padding: 0 10px;
+}
+
+.forget {
+    width: 100%;
+    margin: 30px 0;
+}
+
+.forget>a {
+    display: block;
+    font-size: 14px;
+    font-weight: 300;
+    text-align: center;
+}
+
 .formBtn>button {
     width: 100%;
     box-sizing: border-box;
-    /* height: 40px; */
     margin-top: 5px;
     padding: 20px 0;
     border: none;
@@ -46,12 +70,20 @@
     text-transform: capitalize;
 }
 
+.account {
+    margin: 20px 0 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+}
+
 .alternative>button {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px 0;
+    gap: 10px;
     margin-top: 10px;
     border: 1px solid #D8DBEB;
     box-sizing: border-box;
@@ -63,8 +95,9 @@
     background: #5383ec;
     color: white;
     border: none;
-    padding: 15px 0;
+    padding: 20px 0;
 }
+
 fieldset {
     margin: 20px 0;
     border: 1px solid #D8DBEB;
@@ -73,7 +106,21 @@ fieldset {
     border-right: none;
 
 }
+
 fieldset>legend {
     font-weight: 300;
     text-align: center;
+}
+
+.alternative button>img {
+    width: 32;
+    height: 32;
+    vertical-align: middle;
+    fill: currentcolor;
+    color: rgb(24, 119, 242);
+}
+
+.forget p>a {
+    color: blue;
+    font-size: 12px;
 }
