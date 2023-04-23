@@ -3,9 +3,23 @@ import { NavLink } from "react-router-dom";
 import classes from "./header.module.css";
 import { UserContext } from "../../contextApi/userContextApi";
 import Cart from "../../../pages/cart/cart";
+import SearchIcon from "../../../assets/images/search.png";
 import sideBarContent from "../../../assets/images/logo.svg";
 const Header = () => {
-  const { open, SetisOpen, handleClose, cart } = useContext(UserContext);
+  const {
+    open,
+    SetisOpen,
+    handleClose,
+    cart,
+    handleValue,
+    search,
+    handleSearch,
+  } = useContext(UserContext);
+  const [toggleSearch, setToggleSearch] = useState(false);
+  const toggler = () => {
+    setToggleSearch(!toggleSearch);
+  };
+
   const [active, setActive] = useState(false);
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -24,7 +38,27 @@ const Header = () => {
         } `}
       >
         <div className={classes.main}>
-          <div className={classes.logo}>logo</div>
+          <div className={classes.logo}>
+            <div className={classes.heading}>logo</div>
+            <div className={classes.search}>
+              <div
+                className={`${toggleSearch ? classes.active : ""} && ${
+                  classes.container
+                }`}
+              >
+                <div className={classes.imgContainer}>
+                  <img src={SearchIcon} onClick={toggler} alt="" />
+                </div>
+                <div className={classes.input}>
+                  <input
+                    type="text"
+                    onChange={handleValue}
+                    placeholder="search item"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
           <div className={classes.side}>
             <i
               onClick={handleClose}

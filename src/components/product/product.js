@@ -6,8 +6,15 @@ import Bra from "../../assets/images/bra1.webp";
 import { Link, useParams } from "react-router-dom";
 
 const Product = () => {
-  const { products, setProducts, handleSearch, addToCart } =
-    useContext(UserContext);
+  const {
+    products,
+    setProducts,
+    addToCart,
+    setSearch,
+    handleValue,
+    handleSearch,
+    search,
+  } = useContext(UserContext);
 
   const filteredProduct = products.filter((item) => {
     return (
@@ -19,23 +26,45 @@ const Product = () => {
     <>
       <main>
         <div className={classes.box}>
-          {filteredProduct.map((product,id) => (
+          {filteredProduct
+            .filter((item) => {
+              if (search == "") {
+                return item;
+              } else if (
+                item.title.toLowerCase().includes(search.toLowerCase())
+              ) {
+                return item;
+              }
+            })
+            .map((product, id) => (
+              <ProductItems
+                {...product}
+                key={id}
+                addToCart={addToCart}
+                product={product}
+                id={id}
+              />
+            ))}
+        </div>
+
+        {/* <div className={classes.box}>
+          {filteredProduct.map((product, id) => (
             <ProductItems
               {...product}
               key={id}
               addToCart={addToCart}
               product={product}
-             id={id}
+              id={id}
             />
           ))}
-        </div>
+        </div> */}
       </main>
     </>
   );
 };
 
 export default Product;
-const ProductItems = ({ product,  addToCart,price,title,image,id, key }) => {
+const ProductItems = ({ product, addToCart, price, title, image, id, key }) => {
   return (
     <>
       <div className={classes.card}>
@@ -49,8 +78,7 @@ const ProductItems = ({ product,  addToCart,price,title,image,id, key }) => {
         <h2>$ {price}</h2>
         <div className={classes.btn}>
           <button onClick={() => addToCart(product)}>+</button>
-          <Link to="">
-          </Link>
+          <Link to=""></Link>
         </div>
       </div>
     </>

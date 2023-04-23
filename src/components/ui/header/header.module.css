@@ -54,7 +54,77 @@
     transition: 1s all;
 }
 
-.closeImg {}
+
+
+
+
+.logo {
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    background: black;
+    position: relative;
+    border-radius: 50px;
+    border: 1px solid white;
+    transition: 0.6s ease-in-out;
+}
+
+.container .imgContainer {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+}
+
+.container .imgContainer>img {
+    width: 20px;
+    filter: invert(1);
+}
+
+.container.active {
+    width: 90%;
+    display: flex;
+
+}
+
+.container .input {
+    width: 500px;
+    height: 30px;
+    box-sizing: border-box;
+    position: relative;
+    right: -50px;
+    top: 10px;
+}
+
+.container .input>input {
+    width: 88%;
+    border-radius: 8px;
+    padding: 5px;
+    border: none;
+    outline: none;
+    color: white;
+    background: transparent;
+    box-sizing: border-box;
+    height: 30px;
+    box-sizing: border-box;
+}
+.container .input>input::placeholder{
+    text-transform: capitalize;
+}
+.search {
+    width: 100%;
+
+    box-sizing: border-box;
+    border-radius: 10px;
+    justify-content: space-between;
+    /* border: 1px solid black; */
+}
 
 
 
@@ -67,9 +137,7 @@
     justify-content: space-between;
 }
 
-.shoppingCart>img {
-    width: 30px;
-}
+.shoppingCart>img {}
 
 .cartList {
     width: 50%;
@@ -86,8 +154,9 @@
     color: black;
     transition: 0.5s ease;
 }
-.myCart{
-}
+
+.myCart {}
+
 .trash {
     width: 100%;
     display: flex;
@@ -101,8 +170,18 @@
         left: 0;
         right: 0;
         top: 0;
-
         width: 100%;
         bottom: 0;
+    }
+
+    .logo {
+        width: 100%;
+        gap: 0px;
+    }
+
+
+
+    .search {
+        width: 100%;
     }
 }

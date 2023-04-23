@@ -7,13 +7,22 @@ export const UserContextApi = ({ children }) => {
     const [products, setProducts] = useState([])
     const [cart, setCart] = useState([])
     const [open, SetisOpen] = useState(false)
+    const [search, setSearch] = useState("")
+    const handleValue = (e) => {
+        setSearch(e.target.value)
+    }
+    const handleSearch = (e) => {
+        e.preventDefault()
+        console.log(search)
+    }
+
     useEffect(() => {
         const fetchProducts = async () => {
             try {
                 const response = await axios({
                     method: "GET",
                     // url: 'https://fakestoreapi.com/products',
-                    url:"data.json",
+                    url: "data.json",
                     headers: {
                         "Content-Type": "application.json",
                         "Accept": "application.json"
@@ -27,6 +36,22 @@ export const UserContextApi = ({ children }) => {
         }
         fetchProducts()
     }, [])
+    {/* <div className={classes.product}>
+            {cartData
+              .filter((item) => {
+                if (search == "") {
+                  return item;
+                } else if (
+                  item.name.toLowerCase().includes(search.toLowerCase())
+                ) {
+                  return item;
+                }
+              })
+              .map((item, i) => (
+                <ProductItems item={item} key={i} />
+              ))}
+      
+          </div> */}
 
     const handleClose = () => {
         SetisOpen(!open)
@@ -38,12 +63,12 @@ export const UserContextApi = ({ children }) => {
                 cart.map((x) =>
                     x.id === product.id ? { ...exist, qty: exist.qty + 1 } : x
                 )
-             
+
             );
             console.log(product)
         } else {
             setCart([...cart, { ...product, qty: 1 }]);
-        
+
         }
     }
 
@@ -75,7 +100,12 @@ export const UserContextApi = ({ children }) => {
         open,
         SetisOpen,
         addToCart,
-        removeFromCart, 
+        removeFromCart,
+        search,
+        setSearch,
+        handleValue,
+        handleSearch,
+        search
     }
 
     return (

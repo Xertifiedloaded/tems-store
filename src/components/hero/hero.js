@@ -23,7 +23,7 @@ const Hero = () => {
           <div className={classes.text}>
             <span>trend</span>
             <h1>
-              autum sale stylish <span className={classes.woman}>womens</span>
+              autum sales style <span className={classes.woman}>women</span>
             </h1>
             <div className={classes.discover}>
               <p>discover more</p>
