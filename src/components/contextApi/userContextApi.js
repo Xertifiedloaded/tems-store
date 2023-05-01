@@ -8,6 +8,11 @@ export const UserContextApi = ({ children }) => {
     const [cart, setCart] = useState([])
     const [open, SetisOpen] = useState(false)
     const [search, setSearch] = useState("")
+    const itemsPrice = cart.reduce((a, c) => a + c.price * c.qty, 0);
+    const BankCharges = 20;
+    const Delivery = "";
+    const totalPrice = parseFloat(itemsPrice + BankCharges + Delivery);
+
     const handleValue = (e) => {
         setSearch(e.target.value)
     }
@@ -36,22 +41,6 @@ export const UserContextApi = ({ children }) => {
         }
         fetchProducts()
     }, [])
-    {/* <div className={classes.product}>
-            {cartData
-              .filter((item) => {
-                if (search == "") {
-                  return item;
-                } else if (
-                  item.name.toLowerCase().includes(search.toLowerCase())
-                ) {
-                  return item;
-                }
-              })
-              .map((item, i) => (
-                <ProductItems item={item} key={i} />
-              ))}
-      
-          </div> */}
 
     const handleClose = () => {
         SetisOpen(!open)
@@ -86,6 +75,9 @@ export const UserContextApi = ({ children }) => {
     }
     const clearCart = () => {
         setCart([])
+        totalPrice = ""
+       
+
     }
 
     const value = {
@@ -105,7 +97,11 @@ export const UserContextApi = ({ children }) => {
         setSearch,
         handleValue,
         handleSearch,
-        search
+        search,
+        itemsPrice,
+        BankCharges,
+        Delivery,
+        totalPrice
     }
 
     return (

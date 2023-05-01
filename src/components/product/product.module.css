@@ -1,31 +1,85 @@
 main {
     width: 90%;
+    height: 100vh;
     margin: 0 auto;
+    display: flex;
+    position: relative;
 }
 
 main .box {
     display: grid;
-    min-height: 250px;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 10px;
 
 }
 
-.card {
-    position: relative;
-    border: 1px solid black;
-    overflow: hidden;
+.modal {
+    position: fixed;
+    color: white;
+    background-color: black;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+.hambug {
+    padding: 90px 30px;
     box-sizing: border-box;
-    padding: 10px;
-    transition: 1s ease-in;
+
+}
+
+.modalComponent {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+}
+
+.star {
+    display: flex;
+}
+
+.rating {}
+
+.close {
+    display: flex;
+    justify-content: end;
+}
+
+.close>img {
+    filter: invert(1);
+}
+
+.card {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #fff;
+    height: 28.125rem;
+    max-height: 20.125rem;
+    overflow: hidden;
+    padding: 0.9375rem;
+    -webkit-transition: max-height .3s ease-in;
+    -o-transition: max-height .3s ease-in;
+    transition: max-height .3s ease-in;
+    scale: 1;
+    transition: 0.2s ease-in;
+}
+
+.card:hover {
+    scale: 1.01;
 }
 
 .card .image>img {
     width: 100%;
     box-sizing: border-box;
-    padding: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.097);
-    max-height: 200px;
+
 }
 
 .card .btn {
@@ -51,10 +105,19 @@ main .box {
     }
 }
 
+
+
+.star {
+    cursor: pointer;
+}
+
+.activeRate {
+    filter: invert(0);
+}
+
 .card .btn button {
     display: none;
     background-color: red;
-
     border: none;
     width: 30px;
     color: white;
@@ -66,4 +129,45 @@ main .box {
 .card a>h2 {
     font-size: 14px;
     margin-bottom: 5px;
+}
+
+@media screen and (max-width:600px) {
+    .card {
+        display: flex;
+        flex-direction: row;
+        height: 10rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .card .image>img {
+        display: block;
+        height: 100px;
+        margin: 0 auto;
+        box-sizing: border-box;
+
+    }
+
+    .modalComponent {
+        flex-direction: column;
+        height: 70vh;
+    }
+
+    .hambug {
+        height: 100vh;
+    }
+
+    .modalComponent {}
+
+    main {
+        width: 100%;
+    }
+
+    .modalImg {
+        width: 100%;
+    }
+
+    .modalImg>img {
+        width: 100%;
+    }
 }

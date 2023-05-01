@@ -4,11 +4,9 @@ import CartContext from "../../components/cartContext/cartContext";
 import classes from "./cart.module.css";
 import FormInfo from "../../components/form/form";
 const Cart = () => {
-  const { cart, clearCart } = useContext(UserContext);
-  const itemsPrice = cart.reduce((a, c) => a + c.price * c.qty, 0);
-  const BankCharges = 20;
-  const Delivery = "";
-  const totalPrice = parseFloat(itemsPrice + BankCharges + Delivery);
+  const { cart, clearCart, itemsPrice, BankCharges, Delivery, totalPrice } =
+    useContext(UserContext);
+
   return (
     <>
       <div className={classes.sideMirror}>
